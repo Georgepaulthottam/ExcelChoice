@@ -1,115 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Side Menus</title>
+    <title>Cleaning Service</title>
     <style>
         /* Add CSS styles here */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-        }
-        
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
-        
-        .sidebar {
-            background-color: #333;
-            color: #fff;
-            width: 250px;
-            padding: 20px;
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .sidebar li {
-            margin-bottom: 10px;
-        }
-        
-        .sidebar a {
-            color: #fff;
-            text-decoration: none;
-        }
-        
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
-        
-        /* Media query for mobile */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-                transform: translateX(-100%);
-                position: fixed;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                z-index: 999;
-            }
-            
-            .sidebar.open {
-                transform: translateX(0);
-            }
-            
-            .content {
-                margin-left: 250px;
-            }
-        }
-    </style>
-    <script>
-        // JavaScript to handle sidebar toggling
-        document.addEventListener("DOMContentLoaded", function() {
-            const sidebar = document.querySelector('.sidebar');
-            const sidebarToggle = document.querySelector('.sidebar-toggle');
-
-            sidebarToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('open');
-            });
-        });
-    </script>
-</head>
-<body>
-<div class="container">
-    <div class="sidebar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-    <div class="content">
-        <button class="sidebar-toggle">Toggle Sidebar</button>
-        <h1>Welcome to the Side Menus</h1>
-        <p>This is the main content area of the page.</p>
-    </div>
-</div>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Side Menus</title>
-    <style>
-        /* Add CSS styles here */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
         }
 
         .container {
@@ -120,9 +20,14 @@
         .sidebar {
             background-color: #333;
             color: #fff;
-            width: 250px;
+            width: 80px;
             padding: 20px;
-            transition: transform 0.3s ease-in-out;
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .sidebar.expand {
+            width: 250px;
         }
 
         .sidebar ul {
@@ -136,8 +41,15 @@
         }
 
         .sidebar a {
+            display: block;
             color: #fff;
             text-decoration: none;
+            padding: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
         }
 
         .content {
@@ -153,20 +65,37 @@
 
             .sidebar {
                 width: 100%;
-                transform: translateX(-100%);
+                height: 60px;
                 position: fixed;
                 top: 0;
                 left: 0;
-                bottom: 0;
                 z-index: 999;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
             }
 
-            .sidebar.open {
+            .sidebar.expand {
                 transform: translateX(0);
             }
 
+            .sidebar ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+            .sidebar li {
+                margin: 0 5px;
+            }
+
+            .sidebar a {
+                padding: 10px;
+                border-radius: 50%;
+            }
+
             .content {
-                margin-left: 250px;
+                margin-top: 60px;
             }
         }
     </style>
@@ -177,7 +106,7 @@
             const sidebarToggle = document.querySelector('.sidebar-toggle');
 
             sidebarToggle.addEventListener('click', function () {
-                sidebar.classList.toggle('open');
+                sidebar.classList.toggle('expand');
             });
         });
     </script>
@@ -188,16 +117,17 @@
         <div class="sidebar">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
                 <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Testimonials</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
         <div class="content">
-            <button class="sidebar-toggle">Toggle Sidebar</button>
-            <h1>Welcome to the Side Menus</h1>
-            <p>This is the main content area of the page.</p>
+            <button class="sidebar-toggle">☰</button>
+            <h1>Welcome to XYZ Cleaning Service</h1>
+            <p>We offer professional cleaning services for residential and commercial spaces.</p>
+            <p>Contact us today to schedule an appointment!</p>
         </div>
     </div>
 </body>
