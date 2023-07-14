@@ -1,0 +1,104 @@
+<?php
+
+ 
+if($_POST["submit"]) {
+
+ 
+mail("georgepaulthottam@gmail.com", "Here is the subject line",
+
+ 
+$_POST["insert your message here"]. "From: excelchoie@gmail.com");
+
+ 
+}
+
+ 
+?>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bootstrap.css" />
+    <title>Navigation bar</title>
+</head>
+
+<body>
+    <header class="fixed-top">
+        <div id="brand"><a href="/">ExcelChoice</a></div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/products">Services</a></li>
+                <li><a href="#booking">Book-Now</a></li>
+
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <ul class="mobile-menu">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/products">Services</a></li>
+                <li><a href="#booking">Book-Now</a></li>
+                
+            </ul>
+        </div>
+    </header>
+    <script src="index.js"></script>
+    <section ID='home' style="margin-top: 100px;">
+        <h1 class="text-center" style="margin-top: 100px;">About Us</h1>
+    </section>
+    <section ID='services' >
+        <h1 class="text-center" style="margin-top: 100px;">services</h1>
+
+    </section>
+
+    <section ID='booking'>
+        <div class="container mt-4 pt-4">
+        <div class="text-center">
+        <h1 class="text-center" style="margin-top: 100px;">Book-Now</h1>
+
+        <h2>
+            Book an apppintment now and our experts will get in contact with you soon!
+        </h2>
+
+        <div class="text-center">
+            <form name="contact" action="mailto:georgepaulthottam@gmail.com"  data-netlify="true">
+                <input type="text" class="form-control mt-lg-2" placeholder="Name" name="name">
+                <input type="email" class="form-control mt-lg-2" placeholder="Email" name="email">
+                <input type="text" class="form-control mt-3" placeholder="Mobile No" name="mobile">
+                <div class="row mt-4">
+                <div class="col-lg-4">
+                <label for="service" class="col-form-label">Choose the service type</label>
+                </div>
+                <div class="col-lg-4">
+                <select class="form-select" name="service" id="">
+                    <option value="Residential">Residential</option>
+                    <option value="Indistrial">Industrial</option>
+                </select>
+                </div>
+                </div>
+                <input type="text" class="form-control mt-3 placeholder-glow" placeholder="Address (include landmarks)" name="address">
+                <div class="mb-3 mt-3">
+                    <textarea class="form-control" rows="5" id="Order" name="text" placeholder="Order Details"></textarea>
+        
+                    
+                </div>
+                <input type="submit" name="submit" value="Book Now" class="btn btn-outline-primary  ">
+            </form>
+        
+        
+        </div>
+        </div>
+        </div>
+    
+    </section>
+
+</body>
+
+</html>
