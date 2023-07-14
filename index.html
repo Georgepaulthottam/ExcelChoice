@@ -1,19 +1,4 @@
-<?php
 
- 
-if($_POST["submit"]) {
-
- 
-mail("georgepaulthottam@gmail.com", "Here is the subject line",
-
- 
-$_POST["insert your message here"]. "From: excelchoie@gmail.com");
-
- 
-}
-
- 
-?>
 
 <html lang="en">
 
@@ -68,7 +53,7 @@ $_POST["insert your message here"]. "From: excelchoie@gmail.com");
         </h2>
 
         <div class="text-center">
-            <form name="contact" action="mailto:georgepaulthottam@gmail.com"  data-netlify="true">
+            <form name="contact" action="email.php"  data-netlify="true">
                 <input type="text" class="form-control mt-lg-2" placeholder="Name" name="name">
                 <input type="email" class="form-control mt-lg-2" placeholder="Email" name="email">
                 <input type="text" class="form-control mt-3" placeholder="Mobile No" name="mobile">
